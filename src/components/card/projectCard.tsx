@@ -108,7 +108,7 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         className="p-6"
         variants={contentVariants}
       >
-        <h3 className="text-xl font-bold mb-2 text-gray-800">
+        <h3 className="text-xl font-bold mb-2 text-blue-600">
           {project.title}
         </h3>
         <p className="text-gray-600 mb-4">
@@ -118,7 +118,7 @@ export const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm"
+              className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-base font-semibold"
             >
               {tech}
             </span>

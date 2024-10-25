@@ -1,11 +1,8 @@
 "use client";
-import {  useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import { motion, useInView } from "framer-motion";
-import {
-  Github,
-  Eye,
-} from "lucide-react";
+import { Github, Eye } from "lucide-react";
 import { ProjectCard } from "@/components/card/projectCard";
 import { SkillCard } from "@/components/card/skillCard";
 import HeroSection from "@/components/HeroSection";
@@ -31,26 +28,28 @@ interface Skill {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Chekromlek",
-    description:
-      `"Chekromlek" is a social media platform dedicated to sharing creative projects. It provides a user-friendly interface for artists, designers, and entrepreneurs to showcase their work, connect with others, and inspire a global community of creators.`,
+    title: "SmakChet",
+    description: ` "SmakChet" is a website that includes everything you need about
+              volunteers. We process all your event details, date management,
+              user roles, etc.`,
     technologies: ["Next.js", "TypeScript", "MongoDB"],
-    imageUrl: "https://my-image-storage-bucket-1234.s3.us-east-1.amazonaws.com/photo_2024-10-24_14-26-12.jpg",
+    imageUrl:
+      "https://my-image-storage-bucket-1234.s3.us-east-1.amazonaws.com/photo_2024-10-24_14-26-12.jpg",
     projectUrl: "https://project-url.com",
-    githubUrl: "https://github.com/chunminglingg/Chekromlek_Monorepo.git",
+    githubUrl: "https://github.com/MeeReak/smakchet-monorepo",
   },
 ];
 
 const skills: Skill[] = [
-  { name: "TypeScript", level: 4, category: "Frontend" },
   { name: "React/Next.js", level: 4, category: "Frontend" },
   { name: "Tailwind CSS", level: 4, category: "Frontend" },
+  { name: "TypeScript", level: 4, category: "Frontend" },
   { name: "Node.js", level: 4.5, category: "Backend" },
   { name: "ExpressJs", level: 4, category: "Backend" },
-  { name: "NestJs", level: 3.5, category: "Backend" },
-  { name: "AWS", level: 2, category: "Cloud" },
-  { name: "Docker", level: 4, category: "Tools" },
+  { name: "NestJs", level: 2.5, category: "Backend" },
+  { name: "AWS", level: 3, category: "Cloud" },
   { name: "Git", level: 4.5, category: "Tools" },
+  { name: "Docker", level: 3, category: "Tools" },
 ];
 
 const sectionVariants = {
@@ -60,9 +59,9 @@ const sectionVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      staggerChildren: 0.3
-    }
-  }
+      staggerChildren: 0.3,
+    },
+  },
 };
 
 const itemVariants = {
@@ -71,9 +70,9 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5
-    }
-  }
+      duration: 0.5,
+    },
+  },
 };
 
 const containerVariants = {
@@ -81,17 +80,18 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const Home: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const CV_URL = "https://drive.google.com/file/d/1OunQR9djK8CL5V0SFJoBCncjCH6gYLnX/view?usp=sharing";
+  const CV_URL =
+    "https://drive.google.com/file/d/14lGjwqkDoRL4WrHpuKcuM493kAXk7hCw/view?usp=sharing";
   const projectsRef = useRef(null);
   const isProjectsInView = useInView(projectsRef, { once: true, amount: 0.2 });
-  console.log(activeSection)
+  console.log(activeSection);
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "projects", "skills", "contact"];
@@ -113,21 +113,21 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>Tan Hangsapho - Software Engineer</title>
+        <title>Rin Tithyareak - Software Engineer</title>
         <meta
           name="description"
           content="Professional portfolio of [Your Name] - Software Engineer"
         />
       </Head>
-      <FloatingButton/>
+      <FloatingButton />
       {/* Hero Section */}
-      <HeroSection/>
+      <HeroSection />
       <section id="about" className="py-16">
         <AboutSection />
       </section>
 
       {/* Projects Section */}
-      <motion.section 
+      <motion.section
         ref={projectsRef}
         className="py-16"
         variants={sectionVariants}
@@ -135,21 +135,18 @@ const Home: React.FC = () => {
         animate={isProjectsInView ? "visible" : "hidden"}
       >
         <div className="max-w-6xl mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-bold text-center mb-12"
             variants={itemVariants}
           >
             Featured Projects
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
             variants={containerVariants}
           >
             {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-              >
+              <motion.div key={index} variants={itemVariants}>
                 <ProjectCard project={project} />
               </motion.div>
             ))}
@@ -166,12 +163,12 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-           <motion.h2 
-            className="text-3xl font-bold text-center mb-12"
-            variants={itemVariants}
-          >
-            Skills
-          </motion.h2>
+            <motion.h2
+              className="text-3xl font-bold text-center mb-12"
+              variants={itemVariants}
+            >
+              Skills
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {(["Frontend", "Backend", "Cloud", "Tools"] as const).map(
                 (category) => (
@@ -206,12 +203,12 @@ const Home: React.FC = () => {
             <div className="flex justify-center space-x-4">
               <button
                 onClick={() =>
-                  (window.location.href = "https://github.com/tanhangsapho")
+                  (window.open("https://github.com/MeeReak","_blank") )
                 }
                 className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300"
               >
                 <Github className="w-5 h-5 mr-2" />
-               Github
+                Github
               </button>
               <button
                 onClick={() => window.open(CV_URL, "_blank")}
@@ -229,7 +226,7 @@ const Home: React.FC = () => {
       <footer className="py-8 bg-gray-900 text-white">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Tan Hangsapho. All rights reserved.
+            © {new Date().getFullYear()} Rin Tithyareak. All rights reserved.
           </p>
         </div>
       </footer>

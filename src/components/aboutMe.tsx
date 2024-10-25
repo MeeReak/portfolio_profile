@@ -9,7 +9,7 @@ const TimelineSection = () => {
 
   const timelineItems = [
     {
-      period: "2020-2024",
+      period: "2021-2025",
       title: "Royal University Of Phnom Penh | Bachelor's Degree",
       location: "Toul Kork, Phnom Penh, Cambodia",
       side: "left"
@@ -26,12 +26,12 @@ const TimelineSection = () => {
       location: "Builing 13 Preah Monivong Blvd (93), Phnom Penh",
       side: "left"
     },
-    {
-      period: "2020-2024",
-      title: "Toul Tom Pong High School",
-      location: "Street 155, Phnom Penh, Cambodia",
-      side: "right"
-    },
+    // {
+    //   period: "2020-2024",
+    //   title: "Toul Tom Pong High School",
+    //   location: "Street 155, Phnom Penh, Cambodia",
+    //   side: "right"
+    // },
   ];
 
   const containerVariants = {
@@ -87,7 +87,7 @@ const TimelineSection = () => {
         <div className="relative">
           {/* Animated timeline line */}
           <motion.div 
-            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 -translate-x-1/2"
+            className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-500 -translate-x-1/2"
             initial={{ scaleY: 0 }}
             animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}

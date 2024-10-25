@@ -66,7 +66,7 @@ const FloatingButton = () => {
   };
 
   const handleGitHubClick = () => {
-    window.open('https://github.com/tanhangsapho', '_blank');
+    window.open('https://github.com/MeeReak', '_blank');
   };
 
   return (

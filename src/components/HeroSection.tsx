@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import {ChevronDown, Eye } from "lucide-react";
 import Image from "next/image";
 const HeroSection = () => {
-  const technologies = [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Next.js",
-    "AWS",
-    "PostgreSQL",
-  ];
+  // const technologies = [
+  //   "React",
+  //   "TypeScript",
+  //   "Node.js",
+  //   "Next.js",
+  //   "AWS",
+  //   "PostgreSQL",
+  // ];
 
   return (
     <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -48,9 +48,9 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
-                Hi, I`m
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  Tan Hangsapho
+                Hi, I&apos;m 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 pl-2">
+                   Rin Tithyareak
                 </span>
               </motion.h1>
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
             </motion.p>
 
             {/* Tech Stack */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -94,7 +94,7 @@ const HeroSection = () => {
                   {tech}
                 </motion.span>
               ))}
-            </motion.div>
+            </motion.div> */}
             {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -105,8 +105,8 @@ const HeroSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open("https://drive.google.com/file/d/1OunQR9djK8CL5V0SFJoBCncjCH6gYLnX/view?usp=sharing", "_blank")} 
-                className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                onClick={() => window.open("https://drive.google.com/file/d/14lGjwqkDoRL4WrHpuKcuM493kAXk7hCw/view?usp=sharing", "_blank")} 
+                className="px-6 py-3 text-blue-600 rounded-lg hover:bg-blue-700 hover:text-white transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
               >
                 <Eye className="w-5 h-5" />
                 View CV
@@ -127,7 +127,7 @@ const HeroSection = () => {
                 <Image
                   width={"500"}
                   height={"500"}
-                  src="https://my-image-storage-bucket-1234.s3.us-east-1.amazonaws.com/photo_2024-10-24_10-59-48.jpg"
+                  src="https://my-image-storage-bucket-1234.s3.us-east-1.amazonaws.com/photo_2024-09-26_14-48-31.jpg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -171,7 +171,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6, duration: 0.8 }}
-          className="absolute -bottom-0 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
+          className="absolute -bottom-0 left-[46%] -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
